@@ -1,0 +1,36 @@
+.controls {
+    width: 100%;
+    padding: 54px 0;
+    background-color: #062c56;
+}
+
+.valueInput {
+    width: 260px;
+    margin-right: 20px;
+    padding: 8px 4px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+.button {
+    display: inline-block;
+    width: 188px;
+    margin-right: 20px;
+    padding: 8px 0;
+    background-color: #3884ff;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:active {
+    background-color: rgba(74, 109, 165, 0.8);
+}
+
+.button:last-of-type {
+    margin-right: 0;
+}

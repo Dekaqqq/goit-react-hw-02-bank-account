@@ -1,0 +1,35 @@
+.history {
+    max-width: 864px;
+    margin: 0 auto 20px;
+    border-collapse: collapse;
+}
+
+.headlineRow {
+    background-color: #ebeef2;
+}
+
+.headlineRowItem {
+    min-width: 250px;
+    padding: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000;
+    border: 1px solid #e0e6e7;
+}
+
+.row {
+    text-align: center;
+}
+
+.row:nth-child(even) {
+    background-color: #ecf2f3;
+}
+
+.rowItem {
+    padding: 12px 0;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #5c6975;
+    border: 1px solid #e0e6e7;
+}

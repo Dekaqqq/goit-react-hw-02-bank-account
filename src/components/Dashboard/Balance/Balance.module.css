@@ -1,0 +1,14 @@
+.balance {
+    display: flex;
+    justify-content: space-between;
+    max-width: 320px;
+    margin: 30px auto;
+}
+
+.description {
+    color: #b3b9bf;
+}
+
+.imgSpan {
+    margin-right: 2px;
+}
