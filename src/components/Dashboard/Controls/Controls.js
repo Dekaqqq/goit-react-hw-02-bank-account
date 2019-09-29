@@ -27,10 +27,12 @@ class Controls extends Component {
         const { name } = target;
         const { balance, handleTransactions } = this.props;
 
+        const amountToNumber = Number(amount);
+
         const transaction = {
             id: shortid.generate(),
             type: name,
-            amount: Number(amount),
+            amount: amountToNumber,
             date: new Date().toLocaleString(),
         };
 
@@ -42,8 +44,10 @@ class Controls extends Component {
             return;
         }
 
-        if (!amount) {
+        if (amount <= 0) {
             this.notifyEmptyInput();
+
+            this.reset();
 
             return;
         }
@@ -66,7 +70,7 @@ class Controls extends Component {
     };
 
     notifyEmptyInput = () => {
-        toast.error('Введите сумму для проведения операции!', {
+        toast.error('Введите корректную сумму  для проведения операции!', {
             position: toast.POSITION.TOP_RIGHT,
         });
     };

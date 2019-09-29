@@ -10,7 +10,7 @@ class Dashboard extends Component {
 
         this.state = {
             transactions: [],
-            balance: 5000,
+            balance: 0,
         };
     }
 
