@@ -6,13 +6,9 @@ import shortid from 'shortid';
 import styles from './Controls.module.css';
 
 class Controls extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            amount: '',
-        };
-    }
+    state = {
+        amount: '',
+    };
 
     handleChange = ({ target }) => {
         const { name, value } = target;
@@ -26,7 +22,7 @@ class Controls extends Component {
         const { amount } = this.state;
         const { name } = target;
         const { balance, handleTransactions } = this.props;
-
+        const regExpValidInput = RegExp('^0');
         const amountToNumber = Number(amount);
 
         const transaction = {
@@ -44,7 +40,7 @@ class Controls extends Component {
             return;
         }
 
-        if (amount <= 0) {
+        if (amount <= 0 || amount.match(regExpValidInput)) {
             this.notifyEmptyInput();
 
             this.reset();
