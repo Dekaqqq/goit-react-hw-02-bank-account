@@ -10,6 +10,26 @@ class Dashboard extends Component {
         balance: 0,
     };
 
+    componentDidMount() {
+        this.setState({
+            transactions: JSON.parse(localStorage.getItem('transactions'))
+                ? JSON.parse(localStorage.getItem('transactions'))
+                : [],
+            balance: JSON.parse(localStorage.getItem('balance'))
+                ? JSON.parse(localStorage.getItem('balance'))
+                : 0,
+        });
+    }
+
+    componentDidUpdate(prevState) {
+        const { transactions, balance } = this.state;
+
+        if (prevState.transactions !== transactions) {
+            localStorage.setItem('transactions', JSON.stringify(transactions));
+            localStorage.setItem('balance', JSON.stringify(balance));
+        }
+    }
+
     handleTransactions = transaction => {
         this.setState(prev => ({
             transactions: [...prev.transactions, transaction],
